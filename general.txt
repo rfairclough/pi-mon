@@ -3,3 +3,13 @@ sudo apt-get install binutils
 sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
 sudo rpi-update
 reboot
+
+
+# config.txt optimisations
+# force boot without HDMI
+hdmi_force_hotplug=1
+boot_delay=1
+hdmi_ignore_cec_init
+
+# maximise memory to the system
+gpu_mem_16
