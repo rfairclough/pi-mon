@@ -1,0 +1,5 @@
+# rpi firmware updates
+sudo apt-get install binutils
+sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
+sudo rpi-update
+reboot
