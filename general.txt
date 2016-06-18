@@ -9,7 +9,7 @@ reboot
 # force boot without HDMI
 hdmi_force_hotplug=1
 boot_delay=1
-hdmi_ignore_cec_init
+hdmi_ignore_cec_init=1
 
 # maximise memory to the system
 gpu_mem_16
