@@ -4,20 +4,8 @@ sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexx
 sudo rpi-update
 reboot
 
-
-# config.txt optimisations
-# force boot without HDMI
-hdmi_force_hotplug=1
-boot_delay=1
-hdmi_ignore_cec_init=1
-
-# maximise memory to the system
-gpu_mem_16
-
-
 # run bootstrap runbook:
 ansible-playbook -k -K  -i 'ansible.cfg' -e 'admin_user=ubuntu' -e 'github_user=rfairclough' bootstrap.yaml
-
 
 # for pimonbuilder:
 sudo apt-get install sshpass
