@@ -1,0 +1,26 @@
+---
+- hosts: all
+gather_facts: no
+remote_user: ubuntu 
+pre_tasks:
+- name: verify python installed
+raw: dpkg -s python-simplejson > /dev/null 2>&1
+register: python_installed
+ignore_errors: True
+- name: install python
+raw: apt-get -y install python python-simplejson
+when: python_installed|failed
+tasks:
+- name: add pubkeys from GitHub
+authorized_key: user={{ admin_user }} key=https://github.com/{{ github_user }}.keys
+- name: bootstrap config.txt
+  lineinfile: dest=/boot/firmware/config.txt
+              line='{{item}}'
+  with_items:
+    - '# force boot without HDMI'
+    - 'hdmi_force_hotplug=1'
+    - 'boot_delay=1'
+    - 'hdmi_ignore_cec_init=1'
+    - ''
+    - '# maximise memory to the system'
+    - 'gpu_mem_16'

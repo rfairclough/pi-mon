@@ -13,3 +13,7 @@ hdmi_ignore_cec_init=1
 
 # maximise memory to the system
 gpu_mem_16
+
+
+# run bootstrap runbook:
+ansible-playbook -i 'ansible.cfg' -e 'admin_user=ubuntu' -e 'github_user=rfairclough' bootstrap.yaml

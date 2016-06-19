@@ -1,0 +1,3 @@
+#boot strap the builder
+
+sudo apt install python-pip
