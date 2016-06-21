@@ -5,7 +5,7 @@ sudo rpi-update
 reboot
 
 # run bootstrap runbook:
-ansible-playbook -k -K  -i 'ansible.cfg' -e 'admin_user=ubuntu' -e 'github_user=rfairclough' bootstrap.yaml
+ansible-playbook -k -K  -i 'hosts.cfg' -e 'admin_user=ubuntu' -e 'github_user=rfairclough' bootstrap.yaml
 
 # for pimonbuilder:
 sudo apt-get install sshpass
