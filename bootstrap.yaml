@@ -1,8 +1,9 @@
 ---
 - hosts: all
   gather_facts: no
-  remote_user: ubuntu 
-  sudo: yes
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
   pre_tasks:
     - name: verify python installed
       raw: dpkg -s python-simplejson > /dev/null 2>&1

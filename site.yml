@@ -1,0 +1,9 @@
+---
+# This playbook deploys the whole pimon application stack
+
+  - name: apply common configuration to all nodes
+    hosts: all
+
+
+    roles: 
+      - common
